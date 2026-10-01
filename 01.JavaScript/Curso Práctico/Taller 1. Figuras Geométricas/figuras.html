@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras</title>
+    <link rel="stylesheet" href="figuras.css">
+</head>
+<body>
+    <header>
+        <a href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/603/603512.png" alt="Logotipo">
+            <h1>Figuras</h1>
+        </a>
+    </header>
+    <main>
+        <section class="Figuras">
+            <h2>🟦Cuadrado</h2>
+            <form action="">
+                <label for="cuadrado">Escribe cuanto mide cada lado del cuadrado:</label>
+                <input type="number" id="cuadrado" min="1" required>
+                <button type="button" onclick="calcular_cuadrado('perimetro')">
+                    Calcular el perimetro
+                </button>
+                <button type="button" onclick="calcular_cuadrado('area')">
+                    Calcular el área
+                </button>
+            </form>
+        </section>
+        <section class="Figuras">
+            <h2>🔺Triangulo</h2>
+            <form action="">
+                <label for="triangulo">Escribe cuanto mide la base del triangulo:</label>
+                <input type="number" id="triangulo_base" min="1" required>
+                <label for="triangulo">Escribe cuanto mide la altura del triangulo:</label>
+                <input type="number" id="triangulo_altura" min="1" required>
+                <button type="button" onclick="calcular_triangulo('perimetro')">
+                    Calcular el perimetro
+                </button>
+                <button type="button" onclick="calcular_triangulo('area')">
+                    Calcular el área
+                </button>
+            </form>
+        </section>
+        <section class="Figuras">
+            <h2>🟡Circulo</h2>
+            <form action="">
+                <label for="circulo">Escribe cuanto mide el radio del cuadrado:</label>
+                <input type="number" id="circulo" min="1" required>
+                <button type="button" onclick="calcular_circulo('perimetro')">
+                    Calcular el perimetro
+                </button>
+                <button type="button" onclick="calcular_circulo('area')">
+                    Calcular el área
+                </button>
+            </form>
+        </section>
+        <script src="figuras.js"></script>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch an array to images</title>
+</head>
+<body>
+    <h1>Fetch an array to images</h1>
+    <script>
+
+        const filenames = [
+            'sources/images/forest.jpg',
+            'sources/images/puffins.jpg',
+            'sources/images/town.jpg'
+        ]
+
+        async function fetch_images(){
+            console.log('Fetching images...');
+            
+            for (let filename of filenames){
+                const response = await fetch(filename);
+                const blob = await response.blob();
+                const img = document.createElement('img');
+                
+                img.src = (URL.createObjectURL(blob));
+                img.width=(400);
+                document.body.append(img);
+            }
+        }
+
+        fetch_images(filenames)
+            .then(()=>{
+                console.log('Images fetched');
+            })
+            .catch(error =>{
+                console.log('Something went wrong');
+                console.log(error)
+            })
+            ;
+
+    </script>
+</body>
+</html>

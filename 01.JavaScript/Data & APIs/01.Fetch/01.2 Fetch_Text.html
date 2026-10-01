@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch a text</title>
+</head>
+<body>
+    <h1>Fetch a text</h1>
+    <p id="poem" style="text-align: justify;"></p>
+    <script>
+        console.log('Fetch a text');
+
+        async function fetch_text(){
+            const response =await fetch('sources/poem.txt');
+            const text = await response.text();
+            document.getElementById('poem').innerText = text;
+        }
+
+        fetch_text()
+            .then(()=>{
+                console.log('All works fine');
+            })
+            .catch(error =>{
+                console.log('An error ocurred');
+                console.log(error);
+            });
+    </script>
+</body>
+</html>
